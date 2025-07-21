@@ -136,6 +136,7 @@ body {
 @media (max-width: 768px) {
   .sidebar {
     left: -260px;
+    transition: left 0.5s ease;
   }
 
   .sidebar.active {
