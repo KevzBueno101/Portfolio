@@ -11,8 +11,9 @@
   />
   <!-- Include Font Awesome in your HTML <head> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="img/png" href="img/portfolio-icon.png">
+  <link rel="icon" type="img/svg" href="img/icon.svg">
 <!-- <a href="https://www.flaticon.com/free-icons/portfolio" title="portfolio icons">Portfolio icons created by Freepik - Flaticon</a> -->
+ 
 </head>
 <body>
   <!-- Sidebar -->
@@ -27,8 +28,8 @@
     </div>
     <nav class="nav-bar">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#home" title="Home">Home</a></li>
+        <li><a href="#about-section">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skill">Skills</a></li>
         <li><a href="#certificates">Certificates</a></li>
@@ -39,11 +40,8 @@
         <a href="https://www.linkedin.com/in/kevin-bueno-922174375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="mailto:kevinbueno360@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/KevzBueno101"><i class="fab fa-github" target="_blank"></i></a>
-        <a href="https://www.credly.com/users/kvn" target="_blank" title="View My Badges on Credly">
-          <i class="fab fa-credly"></i>
-  <i class="fas fa-certificate"></i>
-</a>
-          <div class="nav-footer">
+        <a href="https://www.credly.com/users/kvn" target="_blank" title="View My Badges on Credly"><i class="fas fa-certificate"></i></a>
+        <div class="nav-footer">
             <footer>
                 <p>&copy; 2025 Kevin B. Bueno</p>
             </footer>
@@ -53,17 +51,36 @@
   </header>
   <!-- Main content -->
   <main class="main-content">
-    <div class="headline">
-      <h1>Hi, I'm Kevin</h1>
-      <p>An aspiring <span class="se">Software Engineer</span> from the Philippines</p>
+    <div class="headline" id="home">
+      <div >
+        <h1 id="headline-typing"></h1>
+        <p>An aspiring <span class="se">Software Engineer</span> from the Philippines</p>
+      </div>
       <div class="icons">
         <a href="https://www.facebook.com/your.kevinbbueno"  target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.linkedin.com/in/kevin-bueno-922174375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="mailto:kevinbueno360@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/KevzBueno101"><i class="fab fa-github" target="_blank"></i></a>
+        <a href="https://www.credly.com/users/kvn" target="_blank" title="View My Badges on Credly"><i class="fas fa-certificate"></i></a>
       </div>
     </div>
+    <section id="about-section">
+      <div class="about-header">
+        <h3>About Me</h3>
+      </div>
+      <fieldset>
+        <div class="about-content">
+          <p>
+            I am a Computer Engineering student with a passion for software development and a keen interest in exploring the world of technology. My journey in the field has been driven by a desire to create innovative solutions and contribute to the ever-evolving tech landscape.
+          </p><br>
+          <p>
+            I have experience in various programming languages, including Python, Java, and C++. I am also proficient in web development technologies such as HTML, CSS, and JavaScript. My projects reflect my commitment to continuous learning and my enthusiasm for tackling new challenges.
+          </p>
+        </div>
+      </fieldset>
+    </section>
   </main>
+  <!-- Sections -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="js/script.js"></script>
 </body>
