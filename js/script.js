@@ -11,13 +11,6 @@
     }
   });
 
-
-  // Toggle icon change on click
-  document.getElementById('toggleIcon').addEventListener('click', function () {
-    this.classList.toggle('fa-angle-left');
-    this.classList.toggle('fa-angle-right');
-  });
-
   // Function to type text character by character
   function typeText(text, element, speed = 100) {
       let i = 0;
