@@ -136,7 +136,7 @@ body {
 @media (max-width: 768px) {
   .sidebar {
     left: -260px;
-    transition: left 0.5s ease;
+    transition: all 0.5s ease;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%)
   }
@@ -155,9 +155,10 @@ body {
   }
 
   .sidebar .toggle-btn {
-    right: -20px;
+    right: -14px;
     top: 500px;
     position: absolute;
+    backdrop-filter: blur(14px) saturate(180%);
   }
 
   .sidebar.collapsed {
