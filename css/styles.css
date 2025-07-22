@@ -193,6 +193,7 @@ body {
   margin-top: 230px;
   font-size: xx-large;
   align-items: center;
+  margin-bottom: 350px;
 }
 .headline .se{
   color: var(--orange);
@@ -246,7 +247,6 @@ body {
   padding: 1rem;
   background: var(--dark);
   color: var(--light);
-  margin-top: 500px;
 }
 .about-header {
   text-align: center;
