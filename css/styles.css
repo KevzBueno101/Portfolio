@@ -181,6 +181,7 @@ body {
 
 .icons i:hover {
   color: var(--orange);
+  transform: scale(1.3);
 }
 .nav-footer{
   color: var(--gray);
