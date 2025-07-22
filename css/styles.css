@@ -6,6 +6,7 @@
   --light: #eee;
   --gray: #484848;
   --hover-bg: rgba(255, 166, 0, 0.384);
+  --sidebar-bg: #1a1a1abf;
 }
 
 * {
@@ -68,10 +69,15 @@ body {
   height: 170px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid var(--orange);
+  border: 5px solid var(--gray);
   margin-bottom: 10px;
 }
+.user p {
+  font-size: 1rem;
+  color: var(--light);
+  white-space: nowrap;
 
+}
 .user .name {
   font-size: 2rem;
   font-weight: 600;
@@ -199,7 +205,7 @@ body {
 /* headline */
 .headline {
   text-align: center;
-  margin-top: 230px;
+  margin-top: 50px;
   font-size: xx-large;
   align-items: center;
   margin-bottom: 350px;
@@ -244,6 +250,19 @@ body {
   color: #f0f0f0;        /* subtle color change */
   text-decoration: none; /* optional for hover styling */
   background: var(--orange); /* change background on hover */
+}
+
+/* Header Pic */
+.headpic {
+  display: flex;
+  justify-content: center;
+}
+.headpic img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--orange);
 }
 
 /* Scroll */
