@@ -118,6 +118,13 @@ body {
   font-size: 0;
   padding: 1rem 0;
 }
+.sidebar.collapsed .nav-bar ul li i {
+  font-size: 1.5rem;
+  padding: 0 10px;
+  margin-bottom: 2px;
+  scale: 1.2;
+  transition: all 0.3s ease;
+}
 
 .sidebar.collapsed .nav-bar ul li a::before {
   font-size: 1.4rem;
