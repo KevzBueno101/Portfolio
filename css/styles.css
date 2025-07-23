@@ -9,6 +9,7 @@
   --sidebar-bg: #1a1a1abf;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +19,7 @@
 html {
   scroll-behavior: smooth;
 }
-#home, #about, #projects ,  #skills, #certificates, #contact {
+#home, #projects ,  #skills, #certificates, #contact {
   scroll-margin-top: 260px;
 }
 
@@ -256,6 +257,7 @@ body {
 .headpic {
   display: flex;
   justify-content: center;
+  border-radius: 79px;
 }
 .headpic img {
   width: 300px;
@@ -263,24 +265,12 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid var(--orange);
+  box-shadow: -4px 10px 49px 20px #262626;
 }
 
 /* Scroll */
 .section-section {
   scroll-margin-top: 1px; /* offset for sticky headers */
-}
-
-/* about section */
-#about-section {
-  padding: 1rem;
-  background: var(--dark);
-  color: var(--light);
-}
-.about-header {
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--orange);
-
 }
 
 fieldset {
