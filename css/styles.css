@@ -183,12 +183,15 @@ body {
   }
 .main-content .headline {
     font-size: x-large;
-    margin-top: 60px;
+    margin: 60px -15px
   }
 .headline .icons{
   gap: 8px;
   margin:auto
 }
+.headpic img {
+    width: 100vw;
+  }
 }
 
 /* ----------icons -------- */
@@ -267,13 +270,14 @@ body {
   border-radius: 79px;
 }
 .headpic img {
-  width: 300px;
-  height: 300px;
+  width: clamp(250px, 35vw, 300px); /* Responsive width based on viewport */
+  height: auto; /* Maintains aspect ratio */
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid var(--orange);
   box-shadow: -4px 10px 49px 20px #262626;
 }
+
 
 /* Scroll */
 .section-section {
