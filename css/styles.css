@@ -183,7 +183,12 @@ body {
   }
 .main-content .headline {
     font-size: x-large;
+    margin-top: 60px;
   }
+.headline .icons{
+  gap: 8px;
+  margin:auto
+}
 }
 
 /* ----------icons -------- */
@@ -205,11 +210,14 @@ body {
 }
 /* headline */
 .headline {
-  text-align: center;
-  margin-top: 50px;
-  font-size: xx-large;
-  align-items: center;
-  margin-bottom: 350px;
+    text-align: center;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 1em;
+    margin-top: 50px;
+    font-size: xx-large;
+    align-items: center;
+    margin-bottom: 350px;
 }
 .headline .se{
   color: var(--orange);
@@ -219,7 +227,6 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-right: 30px;
 }
 
 .header{
