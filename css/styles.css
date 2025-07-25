@@ -182,7 +182,7 @@ body {
     left: -260px;
   }
 .main-content .headline {
-    font-size: x-large;
+    font-size: large;
     margin: 5px -15px
   }
 .headline .icons{
@@ -214,7 +214,6 @@ body {
 /* headline */
 .headline {
     text-align: center;
-    border: 1px solid var(--gray);
     border-radius: 10px;
     padding: 1em;
     margin-top: 50px;
@@ -303,4 +302,22 @@ fieldset {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
+  gap: 10px;
+}
+.abouts{
+  margin-bottom: 2em;
+}
+.abouts a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--orange);
+  text-decoration: none;
+}
+.resume > a{
+  text-decoration: none;
+  color: var(--gray);
+}
+.resume a:hover {
+  color: var(--orange);
 }
