@@ -140,7 +140,8 @@ body {
 /* Main content */
 .main-content {
   margin-left: 260px;
-  padding: 2rem;
+  padding-left: 15px;
+  padding-right: 15px;
   transition: margin-left 0.3s ease;
   width: 100%;
 }
