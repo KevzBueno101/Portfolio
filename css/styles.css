@@ -183,7 +183,7 @@ body {
   }
 .main-content .headline {
     font-size: x-large;
-    margin: 10px -15px
+    margin: 5px -15px
   }
 .headline .icons{
   gap: 8px;
@@ -218,9 +218,9 @@ body {
     border-radius: 10px;
     padding: 1em;
     margin-top: 50px;
-    font-size: xx-large;
+    font-size: 1.5rem;
     align-items: center;
-    margin-bottom: 350px;
+    margin-bottom: 30px;
 }
 .headline .se{
   color: var(--orange);
@@ -289,4 +289,18 @@ fieldset {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+.about-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: var(--sidebar-bg);
+  border-radius: 10px;
+  color: var(--light);
+  font-size: 1rem;
+}
+.about-section a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
