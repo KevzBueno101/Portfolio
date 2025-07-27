@@ -6,7 +6,7 @@
   --light: #eee;
   --gray: #484848;
   --hover-bg: rgba(255, 166, 0, 0.384);
-  --sidebar-bg: #1a1a1abf;
+  --sidebar-bg: #27262679;
 }
 
 
@@ -57,6 +57,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: x-large;
+    display: none;
   
 }
 
@@ -173,10 +174,12 @@ body {
   }
 
   .sidebar .toggle-btn {
-    right: -14px;
-    top: 500px;
-    position: absolute;
+    right: -15px;
+    top: 20em;
+    position: fixed;
     backdrop-filter: blur(14px) saturate(180%);
+    display: block;
+    color: var(--hover-bg);
   }
 
   .sidebar.collapsed {
