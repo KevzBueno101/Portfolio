@@ -195,7 +195,8 @@ body {
 }
 .headpic img {
     width: 100vw;
-    margin-top: 5em;
+    margin-top: 5em ;
+    margin-bottom: 3em;
   }
 }
 
@@ -280,6 +281,7 @@ body {
   object-fit: cover;
   border: 5px solid var(--orange);
   box-shadow: -4px 10px 49px 20px #262626;
+  margin-bottom: 3em;
 }
 
 
