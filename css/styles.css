@@ -9,6 +9,18 @@
   --sidebar-bg: #27262679;
 }
 
+.note{
+  background-color: rgba(255, 0, 0, 0.162);
+  position: fixed;
+  top: 0;
+  height: 30px;
+  width: 100%;
+  z-index: 1000;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 
 * {
   margin: 0;
@@ -199,7 +211,6 @@ body {
     margin-bottom: 2em;
   }
 }
-
 /* ----------icons -------- */
 
 .icons i {
