@@ -16,7 +16,7 @@
   <script src="https://kit.fontawesome.com/cf49e860c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="note">Website is under development</div>
+  <div class="note">Website is under development (some fields, texts, projects and skills are dummy text & not yet complete)</div>
   <!-- Sidebar -->
   <header class="sidebar" id="sidebar">
     <div class="toggle-btn" id="toggleBtn">
@@ -116,42 +116,50 @@
       <div class="projects-carousel">
         <!-- Project 1 -->
         <div class="project-card">
-          <div class="project-image">
-            <img src="https://via.placeholder.com/400x250/333/666?text=Project+1" alt="Project 1">
-            <div class="project-links">
-              <a href="#" class="demo-btn">Live Demo</a>
-              <a href="#" class="code-btn">View Code</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>E-commerce Website</h3>
-            <p>A fully responsive e-commerce platform with cart functionality and payment integration.</p>
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>React</span>
-            </div>
-          </div>
-        </div>
-
+  <div class="project-image">
+    <img src="./img/ss.png" alt="Project 1">
+    <div class="project-links">
+      <a href="#" class="demo-btn" id="openDemoModal">Live Demo</a>
+      <a href="https://github.com/KevzBueno101/GWA-Calculator/blob/main/GwaCalculator/main.py" class="code-btn">View Code</a>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>GWA Calculator</h3>
+    <p>A clean, functional, and user-friendly GWA (General Weighted Average) Calculator built with Python and CustomTkinter.</p>
+    <div class="project-tags">
+      <span>Python</span>
+      <span>CustomTkinter</span>
+      <span>Copilot</span>
+      <span>ChatGPT</span>
+    </div>
+  </div>
+</div>
+<!-- Demo   Modal -->
+<div id="demoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeDemoModal">&times;</span>
+    <video controls width="100%" poster="./demo/gwaCal.mp4">
+      <source src="demo/gwaCal.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
         <!-- Project 2 -->
         <div class="project-card">
           <div class="project-image">
             <img src="https://via.placeholder.com/400x250/333/666?text=Project+2" alt="Project 2">
             <div class="project-links">
               <a href="#" class="demo-btn">Live Demo</a>
-              <a href="#" class="code-btn">View Code</a>
+              <a href="https://github.com/KevzBueno101/SPMS/blob/main/PMS/sys.py" class="code-btn">View Code</a>
             </div>
           </div>
           <div class="project-info">
-            <h3>Task Management App</h3>
-            <p>Task management application with drag-and-drop functionality and user authentication.</p>
+            <h3>SPMS</h3>
+            <p>Student Profile Management System. A Windows-based desktop application built using Python and Tkinter for managing student profiles, with plans to integrate SQLite3 for the backend database. This is an exploration project aimed at enhancing my Python development skills.</p>
             <div class="project-tags">
-              <span>React</span>  
-              <span>Node.js</span>
-              <span>MongoDB</span>
-              <span>Express</span>
+              <span>Python</span>
+              <span>Tkinter</span>
+              <span>SQLite3</span>
             </div>
           </div>
         </div>
@@ -363,5 +371,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>
   <script src="js/script.js"></script>
+  <script>
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('demoModal');
+  var btn = document.getElementById('openDemoModal');
+  var span = document.getElementById('closeDemoModal');
+
+  btn.onclick = function(e) {
+    e.preventDefault();
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+});
+</script>
 </body>
 </html>
