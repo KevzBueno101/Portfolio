@@ -140,9 +140,9 @@
   }
 
   @media (max-width: 768px) {
-      .sidebar .toggle-btn {
-          display: block; /* Show on mobile */
-      }
+    .sidebar{
+      display: none;
+    }
   }
 
   .user {
