@@ -269,27 +269,13 @@
   /* Responsive */
   @media (max-width: 992px) {
     .sidebar {
-      left: -260px;
-      transition: all 0.5s ease;
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(25px) saturate(180%);
-      z-index: 1000;
-    }
-
-    .sidebar.active {
-      left: 0;
+      display: none;
     }
 
     .main-content {
       margin-left: 0;
       width: 100%;
       padding: 0 20px;
-    }
-
-    .sidebar.active ~ .main-content {
-      margin-left: 0;
-      filter: brightness(0.7);
-      pointer-events: none;
     }
 
     .sidebar .toggle-btn {
