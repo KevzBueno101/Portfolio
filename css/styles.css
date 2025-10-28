@@ -703,13 +703,33 @@
     text-align: center;
     font-weight: 400;
   }
-@media (max-width: 768px) {
+/* ======== RESPONSIVE DESIGN ======== */
+@media (max-width: 992px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
   }
 }
 
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* Still 3 badges per row */
+    gap: 10px;
+  }
+
+  .skill-badge {
+    padding: 10px 5px;
+  }
+
+  .skill-badge i {
+    font-size: 1.5rem;
+    margin-bottom: 3px;
+  }
+
+  .skill-badge span {
+    font-size: 0.75rem;
+  }
+}
   /* Certificates Section */
   .certificates-section {
     padding: 100px 0;
