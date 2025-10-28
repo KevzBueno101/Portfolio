@@ -1436,13 +1436,14 @@ h3, #heading{
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .cert-card {
-    width: 300px;
+    width: 350px;
     height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .cert-card {
-    width: 250px;
+    width: 300px;
+    height: auto;
   }
 }
