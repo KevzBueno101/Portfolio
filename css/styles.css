@@ -168,6 +168,7 @@
     font-size: 2rem;
     font-weight: 600;
     white-space: nowrap;
+    color: var(--light-gray);
   }
 
   .user .bio {
@@ -308,7 +309,8 @@
   }
   .main-content .headline {
       font-size: large;
-      margin: 5px -15px
+      margin: 5px -15px;
+      color: var(--light-gray);
     }
   .headline .icons{
     gap: 8px;
@@ -1321,3 +1323,126 @@
 .close:hover {
   color: var(--cyan);
 } 
+h3, #heading{
+    color: var(--cyan);
+  }
+
+  /* Badge section */
+.badge-container {
+  overflow-x: auto;
+  width: 100%;
+  margin: 30px;
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+.badge-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: max-content; /* Ensures all badges are in one row and allows scrolling */
+}
+.badge-wrapper > div {
+  flex-shrink: 0; /* Prevents badges from shrinking */
+  transition: transform 0.3s ease; /* Smooth hover transition */
+}
+.badge-wrapper > div:hover {
+  transform: scale(2); /* Hover effect: slight scale up */
+}
+
+/* Certificate */
+#certificates {
+  padding: 40px 20px;
+}
+
+#certificates h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Scrollable container */
+.cert-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+
+/* Each card */
+.cert-card {
+  position: relative;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 320px; /* default size */
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.03);
+}
+
+/* Certificate image */
+.cert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Hover button overlay */
+.view-btn {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--dark-gray);
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  opacity: 0;
+  transition: opacity 0.3s;
+  
+}
+.view-txt{
+  color: var(--gray);
+  font-size: 1rem;
+}
+.view-txt:hover{
+  color: var(--cyan);
+}
+
+.cert-card:hover .view-btn {
+  opacity: 1;
+}
+
+/* Scrollbar styling for webkit browsers */
+.cert-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cert-container::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 4px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .cert-card {
+    width: 300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-card {
+    width: 250px;
+  }
+}
