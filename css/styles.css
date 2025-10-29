@@ -721,7 +721,7 @@
     justify-content: center;
     border-radius: 79px;
   }
-  Projects Section
+  /* Projects Section */
   .projects-section {
     padding: 100px 5%;
     background-color: var(--dark);
