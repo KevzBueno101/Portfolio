@@ -1756,3 +1756,158 @@ footer{
   font-size: 0.9rem;
   border-top: px solid var(--sidebar-bg);
 }
+/* Contact section */
+.contact {
+  text-align: left;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  background-color: var(--dark-gray);
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 2px 20px 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem;
+}
+
+.field {
+  background-color: var(--dark);
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  color: var(--light-gray);
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box; /* Prevents overflow */
+  box-shadow: var(--box-shadow);
+}
+
+.field:hover {
+  border: 1px solid var(--cyan);
+}
+
+.contact > button {
+  color: var(--dark);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  min-width: 120px; /* Ensures button has minimum width */
+}
+
+button:hover {
+  background-color: var(--dark);
+  transform: translateY(-3px);
+  color: var(--cyan);
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--sidebar-bg); /* Fixed missing '1' */
+}
+
+/* Tablet: 1024px and below */
+@media (max-width: 1024px) {
+  .contact {
+    margin: 15px;
+    gap: 25px;
+    padding: 15px;
+  }
+
+  form {
+    margin: 1.5rem;
+    max-width: 600px;
+  }
+
+  .field {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .contact > button {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet/Small Tablet: 768px and below */
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column; /* Stack vertically */
+    margin: 10px;
+    gap: 20px;
+    padding: 20px 15px;
+    text-align: center; /* Center align for better mobile UX */
+  }
+
+  form {
+    margin: 1rem 0;
+    max-width: 100%;
+  }
+
+  .field {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .contact > button {
+    width: 100%; /* Full width buttons on mobile */
+    max-width: 300px; /* But not too wide */
+    margin: 0 auto; /* Center the button */
+    padding: 14px;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding: 0 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+  .contact {
+    margin: 5px;
+    padding: 15px 10px;
+    gap: 15px;
+    border-radius: 8px;
+  }
+
+  form {
+    margin: 0.5rem 0;
+    gap: 12px;
+  }
+
+  .field {
+    padding: 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .contact > button {
+    width: 100%;
+    max-width: 100%; /* Full width on small mobile */
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+
+  footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+  }
+}
