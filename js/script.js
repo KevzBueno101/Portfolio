@@ -195,3 +195,143 @@ document.addEventListener('DOMContentLoaded', function() {
   // Run on scroll
   window.addEventListener('scroll', animateOnScroll);
 });
+// Mobile Navbar - Glassmorphism, Smooth Scroll, and Active Section Highlighting
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavbar = document.getElementById('mobileNavbar');
+  const navItems = document.querySelectorAll('.mobile-nav-item');
+
+  // Glassmorphism scroll effect
+  if (mobileNavbar) {
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth <= 768) {
+        if (window.scrollY > 50) {
+          mobileNavbar.classList.add('scrolled');
+        } else {
+          mobileNavbar.classList.remove('scrolled');
+        }
+
+        // Highlight active section
+        highlightActiveSection();
+      }
+    });
+
+    // Remove scrolled class on resize if not mobile
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        mobileNavbar.classList.remove('scrolled');
+      }
+    });
+  }
+
+  // Smooth scroll to sections when clicking nav items
+  navItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        const navbarHeight = mobileNavbar ? mobileNavbar.offsetHeight : 0;
+        const targetPosition = targetSection.offsetTop - navbarHeight - 20;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Remove active class from all items
+        navItems.forEach(nav => nav.classList.remove('active'));
+        // Add active class to clicked item
+        this.classList.add('active');
+      }
+    });
+  });
+
+  // Function to highlight active section based on scroll position
+  function highlightActiveSection() {
+    const scrollPosition = window.scrollY + 150; // Offset for better detection
+    const navbarHeight = mobileNavbar ? mobileNavbar.offsetHeight : 0;
+
+    // Get all sections with IDs
+    const sections = [
+      { id: 'home', element: document.getElementById('home') || document.querySelector('.headline') },
+      { id: 'about-section', element: document.getElementById('about-section') },
+      { id: 'skills', element: document.getElementById('skills') },
+      { id: 'projects', element: document.getElementById('projects') },
+      { id: 'certificates', element: document.getElementById('certificates') }
+    ];
+
+    let currentSection = null;
+
+    // Find which section we're currently in
+    sections.forEach(section => {
+      if (section.element) {
+        const sectionTop = section.element.offsetTop - navbarHeight;
+        const sectionBottom = sectionTop + section.element.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSection = section.id;
+        }
+      }
+    });
+
+    // Special case: if at the very top, activate Home
+    if (window.scrollY < 100) {
+      currentSection = 'home';
+    }
+
+    // Special case: if at the very bottom, activate last section (certificates)
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+      currentSection = 'certificates';
+    }
+
+    // Update active states
+    if (currentSection) {
+      navItems.forEach(item => {
+        const itemSection = item.getAttribute('data-section');
+        if (itemSection === currentSection) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  // Initialize - set first item as active
+  if (navItems.length > 0) {
+    navItems[0].classList.add('active');
+  }
+
+  // Run once on load
+  if (window.innerWidth <= 768) {
+    highlightActiveSection();
+  }
+
+  // Also run on window load to ensure all elements are loaded
+  window.addEventListener('load', function() {
+    if (window.innerWidth <= 768) {
+      highlightActiveSection();
+    }
+  });
+});
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('demoModal');
+  var btn = document.getElementById('openDemoModal');
+  var span = document.getElementById('closeDemoModal');
+
+  btn.onclick = function(e) {
+    e.preventDefault();
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+});

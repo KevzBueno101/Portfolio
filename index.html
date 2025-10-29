@@ -17,6 +17,42 @@
   <script src="https://kit.fontawesome.com/cf49e860c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Mobile Side Bar -->
+   <!-- Mobile Glassmorphism Navbar (Mobile Only) -->
+<<!-- Mobile Glassmorphism Navbar (Mobile Only) -->
+<nav class="mobile-navbar" id="mobileNavbar">
+  <div class="mobile-navbar-content">
+    <!-- Left: Profile Picture -->
+    <div class="mobile-navbar-left">
+      <img src="img/profilepic.jpg" alt="Kevin Bueno" class="mobile-navbar-profile">
+    </div>
+
+    <!-- Center: Navigation Icons -->
+    <div class="mobile-navbar-nav">
+      <a href="#home" class="mobile-nav-item" data-section="home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="#about-section" class="mobile-nav-item" data-section="about-section">
+        <i class="fa-solid fa-user"></i>
+      </a>
+      <a href="#skills" class="mobile-nav-item" data-section="skills">
+        <i class="fas fa-code"></i>
+      </a>
+      <a href="#projects" class="mobile-nav-item" data-section="projects">
+        <i class="fa-solid fa-folder-open"></i>
+      </a>
+      <a href="#certificates" class="mobile-nav-item" data-section="certificates">
+        <i class="fa-solid fa-award"></i>
+      </a>
+    </div>
+
+    <!-- Right: Resume Button -->
+    <a href="./img/file/dummy.pdf" target="_blank" class="mobile-navbar-resume">
+      <i class="fa-solid fa-download"></i>
+      <span>Resume</span>
+    </a>
+  </div>
+</nav>
   <!-- Sidebar -->
   <header class="sidebar" id="sidebar">
     <div class="toggle-btn" id="toggleBtn">
@@ -345,27 +381,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>
   <script src="js/script.js"></script>
-  <script>
-// Modal functionality
-document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById('demoModal');
-  var btn = document.getElementById('openDemoModal');
-  var span = document.getElementById('closeDemoModal');
-
-  btn.onclick = function(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-  }
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-});
-</script>
 </body>
 </html>
 

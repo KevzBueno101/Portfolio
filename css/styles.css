@@ -123,7 +123,7 @@
   }
 
   .sidebar.collapsed {
-    width: 80px;
+    width: 150px;
   }
 
   .sidebar .toggle-btn {
@@ -135,13 +135,13 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: x-large;
-      display: none; /* Hide by default */
+      display: flex; /* Hide by default */
     
   }
 
   @media (max-width: 768px) {
     .sidebar{
-      display: none;
+      display: flex;
     }
   }
 
@@ -257,7 +257,239 @@
     flex-direction: column;
     background: var(--dark);
   }
+/* Responsive Nav Bar */
+/* ========== MOBILE NAVBAR WITH GLASSMORPHISM ========== */
+.mobile-navbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(10, 25, 47, 0.75);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 10px 15px;
+}
 
+.mobile-navbar.scrolled {
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Single Row Layout */
+.mobile-navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Left Section - Profile */
+.mobile-navbar-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mobile-navbar-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cyan);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-navbar-profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+}
+
+/* Center Section - Navigation Icons */
+.mobile-navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: var(--gray);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 40px;
+  height: 40px;
+}
+
+.mobile-nav-item i {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Hide text labels */
+.mobile-nav-item span {
+  display: none;
+}
+
+/* Hover Effect */
+.mobile-nav-item:hover {
+  color: var(--cyan);
+  transform: translateY(-3px);
+  background: rgba(100, 255, 218, 0.1);
+}
+
+.mobile-nav-item:hover i {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.5));
+}
+
+/* Active State */
+.mobile-nav-item.active {
+  color: var(--cyan);
+  background: rgba(100, 255, 218, 0.15);
+  border-bottom: 2px solid var(--cyan);
+}
+
+.mobile-nav-item.active i {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(100, 255, 218, 0.4));
+}
+
+/* Ripple Effect on Click */
+.mobile-nav-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--cyan);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-nav-item:active::after {
+  opacity: 0.2;
+}
+
+/* Right Section - Resume Button */
+.mobile-navbar-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid var(--cyan);
+  border-radius: 20px;
+  color: var(--cyan);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mobile-navbar-resume:hover {
+  background: var(--cyan);
+  color: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+}
+
+.mobile-navbar-resume i {
+  font-size: 0.85rem;
+}
+
+/* Show mobile navbar only on mobile devices */
+@media (max-width: 768px) {
+  .mobile-navbar {
+    display: block;
+  }
+
+  /* Add padding to main content to prevent overlap */
+  .main-content {
+    padding-top: 70px;
+  }
+
+  /* Adjust headline spacing */
+  .headline {
+    margin-top: 20px;
+  }
+
+  /* Keep original sidebar hidden on mobile */
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .mobile-navbar {
+    padding: 8px 10px;
+  }
+
+  .mobile-navbar-profile {
+    width: 35px;
+    height: 35px;
+  }
+
+  .mobile-navbar-nav {
+    gap: 3px;
+    padding: 0 5px;
+  }
+
+  .mobile-nav-item {
+    padding: 6px;
+    min-width: 35px;
+    height: 35px;
+  }
+
+  .mobile-nav-item i {
+    font-size: 1.1rem;
+  }
+
+  .mobile-navbar-resume {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .mobile-navbar-resume span {
+    display: none;
+  }
+}
+
+/* Very small devices - show only icon in resume button */
+@media (max-width: 360px) {
+  .mobile-navbar-nav {
+    gap: 2px;
+  }
+
+  .mobile-nav-item {
+    padding: 5px;
+    min-width: 32px;
+    height: 32px;
+  }
+
+  .mobile-navbar-resume {
+    padding: 8px;
+    min-width: 35px;
+  }
+}
   /* Container for sections */
   .section-container {
     max-width: 1200px;
