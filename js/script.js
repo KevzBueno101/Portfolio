@@ -258,7 +258,8 @@ document.addEventListener('DOMContentLoaded', function() {
       { id: 'about-section', element: document.getElementById('about-section') },
       { id: 'skills', element: document.getElementById('skills') },
       { id: 'projects', element: document.getElementById('projects') },
-      { id: 'certificates', element: document.getElementById('certificates') }
+      { id: 'certificates', element: document.getElementById('certificates') },
+      { id: 'contact', element: document.getElementById('contact') }
     ];
 
     let currentSection = null;
@@ -280,9 +281,9 @@ document.addEventListener('DOMContentLoaded', function() {
       currentSection = 'home';
     }
 
-    // Special case: if at the very bottom, activate last section (certificates)
+    // Special case: if at the very bottom, activate last section (contact)
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-      currentSection = 'certificates';
+      currentSection = 'contact';
     }
 
     // Update active states
