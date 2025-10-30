@@ -1028,24 +1028,6 @@
     .carousel-controls {
       display: none; /* Hide arrows on mobile */
     }
-
-    .see-more-btn {
-      display: block;
-      margin: 20px auto;
-      padding: 12px 30px;
-      background: var(--cyan);
-      color: var(--dark);
-      border: none;
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .see-more-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
-    }
   }
 
   .certificate-card {
