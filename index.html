@@ -374,12 +374,13 @@
      <section>
     <!-- Contact Section -->
       <div class="contact" id="contact">
-        <form action="">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="d15d9150-d82e-45a8-8373-9baaa00f3b79">
           <p>Send Me a Message</p>
-          <input type="text" placeholder="Juan Dela Cruz" class="field" required />
-          <input type="email" placeholder="example@gmail.com" class="field" required />
-          <textarea name="" id="" class="field" placeholder="message..."></textarea>
-          <button class="field">Send Message</button>
+          <input type="text" name="Name" placeholder="Juan Dela Cruz" class="field" required />
+          <input type="email" name="Email" placeholder="example@gmail.com" class="field" required />
+          <textarea name="Message" id="" class="field" placeholder="message..."></textarea>
+          <button type="submit" class="field">Send Message</button>
         </form> 
       </div>
      </section>
