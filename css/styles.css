@@ -1689,18 +1689,18 @@ h3, #heading{
 /* Responsive for certificate cards */
 @media (max-width: 768px) {
   .cert-card {
-    width: 350px;
-    height: auto;
+    width: 320px;
+    aspect-ratio: 4 / 3; /* slightly taller for smaller screen */
   }
 }
 
+/* Mobile view */
 @media (max-width: 480px) {
   .cert-card {
-    width: 300px;
-    height: auto;
+    width: 260px;
+    aspect-ratio: 3 / 2; /* taller and fits vertical scroll better */
   }
 }
-
 /* Contact section */
 .contact{
   text-align: left;
