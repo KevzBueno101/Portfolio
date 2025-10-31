@@ -250,7 +250,6 @@
     background: var(--dark);
   }
 /* Responsive Nav Bar */
-/* ========== MOBILE NAVBAR WITH GLASSMORPHISM ========== */
 .mobile-navbar {
   display: none;
   position: fixed;
@@ -259,7 +258,7 @@
   width: 100%;
   z-index: 1000;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(50px);
   background: rgba(10, 25, 47, 0.75);
   border-bottom: 1px solid rgba(100, 255, 218, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -268,9 +267,9 @@
 }
 
 .mobile-navbar.scrolled {
-  background: rgba(10, 25, 47, 0.85);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(10, 25, 47, 0.224);
+  backdrop-filter: blur(55px);
+  -webkit-backdrop-filter: blur(55px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
