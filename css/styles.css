@@ -545,6 +545,314 @@
       margin-top: 5em ;
       margin-bottom: 2em;
     }
+/* ========================================
+   TABLET RESPONSIVENESS (768px - 1024px)
+   ======================================== */
+
+@media screen and (max-width: 1024px) {
+  .skills-section {
+    padding: 60px 30px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .skills-container {
+    gap: 30px;
+  }
+
+  .skills-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .skill-badge {
+    padding: 18px 12px;
+    font-size: 0.95rem;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    font-size: 2rem;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+/* ========================================
+   TABLET LANDSCAPE (768px - 1024px)
+   ======================================== */
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .skills-section {
+    padding: 50px 40px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .skills-container {
+    gap: 25px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .skill-badge {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS (up to 767px)
+   ======================================== */
+
+@media screen and (max-width: 767px) {
+  .skills-section {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .section-title i {
+    font-size: 1.4rem;
+    margin-right: 8px;
+  }
+
+  .skills-container {
+    gap: 25px;
+  }
+
+  .skills-category {
+    padding: 20px 15px;
+  }
+
+  .skills-category h3 {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .skill-badge {
+    padding: 15px 10px;
+    font-size: 0.85rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    font-size: 1.8rem;
+    height: 30px;
+    width: 30px;
+    margin-bottom: 8px;
+  }
+
+  .skill-badge span {
+    margin-left: 0;
+  }
+}
+
+/* ========================================
+   MOBILE LANDSCAPE (up to 767px)
+   ======================================== */
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .skills-section {
+    padding: 30px 40px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .skills-container {
+    gap: 20px;
+  }
+
+  .skills-category {
+    padding: 15px 20px;
+  }
+
+  .skills-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  .skill-badge {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    height: 28px;
+    width: 28px;
+    margin-bottom: 6px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE (up to 480px)
+   ======================================== */
+
+@media screen and (max-width: 480px) {
+  .skills-section {
+    padding: 30px 15px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .skills-container {
+    gap: 20px;
+    display: flex;
+  }
+
+  .skills-category {
+    padding: 18px 12px;
+  }
+
+  .skills-category h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .skill-badge {
+    padding: 12px 8px;
+    font-size: 0.75rem;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    font-size: 1.5rem;
+    height: 25px;
+    width: 25px;
+    margin-bottom: 6px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE LANDSCAPE (up to 480px)
+   ======================================== */
+
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  .skills-section {
+    padding: 5px 5px;
+
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .skills-container {
+    gap: 15px;
+    width: 100px;
+  }
+
+  .skills-category {
+    padding: 2px 5px;
+    display: flex;
+  }
+
+  .skills-category h3 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .skill-badge {
+    padding: 10px 6px;
+    font-size: 0.7rem;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 5px;
+  }
+}
+
+/* ========================================
+   EXTRA SMALL MOBILE (up to 360px)
+   ======================================== */
+
+@media screen and (max-width: 360px) {
+  .skills-section {
+    padding: 25px 12px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+
+  .skills-category h3 {
+    font-size: 0.95rem;
+  }
+
+  .skills-grid {
+    gap: 8px;
+  }
+
+  .skill-badge {
+    padding: 10px 6px;
+    font-size: 0.7rem;
+  }
+
+  .skill-badge i,
+  .skill-badge img {
+    height: 22px;
+    width: 22px;
+  }
+}
   
   /* ----------icons -------- */
 
