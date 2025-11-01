@@ -848,7 +848,7 @@
   }
 
   .skills-category {
-    background-color: #112240;
+    background-color: #1122403d;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
@@ -862,12 +862,12 @@
 
   .skills-category h3 {
     color: #64ffda;
-    margin-bottom: 25px;
-    font-size: 1.4rem;
-    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 450;
     text-align: center;
-    position: relative;
-    padding-bottom: 10px;
+    /* position: relative; */
+    padding-bottom: 5px;
   }
 
   .skills-category h3::after {
@@ -883,8 +883,8 @@
 
   .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 5px;
   justify-items: center;
   align-items: stretch;
 }
@@ -895,10 +895,9 @@
   align-items: center;
   justify-content: center;
   background-color: #112240;
-  border: 1px solid #233554;
   border-radius: 8px;
   padding: 10px 10px;
-  width: 70%;
+  width: 100%;
   height: 100%;
   transition: all 0.3s ease;
   cursor: default;
