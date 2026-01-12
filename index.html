@@ -1,576 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Kevin | Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <!-- Font Awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="img/png" href="img/kevinID.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/cf49e860c2.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kevin Bueno - Computer Engineering Student & Aspiring Software Engineer from the Philippines. Explore my projects, skills, and certifications.">
+  <meta name="author" content="Kevin Barias Bueno">
+  <meta name="keywords" content="Kevin Bueno, Computer Engineering, Software Engineer, Portfolio, Web Developer, Philippines">
+  
+  <title>Kevin Bueno | Computer Engineering Student</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/kevinID.png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Font Awesome (Single Import) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
   <!-- Devicon -->
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-  <!-- Mobile Side Bar -->
-  <nav class="mobile-navbar" id="mobileNavbar">
+  <!-- ========== MOBILE NAVBAR ========== -->
+  <nav class="mobile-navbar" id="mobileNavbar" role="navigation" aria-label="Mobile navigation">
     <div class="mobile-navbar-content">
-      <!-- Left: Profile Picture -->
+      <!-- Profile Picture -->
       <div class="mobile-navbar-left">
-        <img src="img/profilepic.jpg" alt="Kevin Bueno" class="mobile-navbar-profile">
+        <img src="img/profilepic.jpg" alt="Kevin Bueno - Profile Picture" class="mobile-navbar-profile">
       </div>
-      <!-- Center: Navigation Icons -->
+      
+      <!-- Navigation Icons -->
       <div class="mobile-navbar-nav">
-        <a href="#home" class="mobile-nav-item" data-section="home">
+        <a href="#home" class="mobile-nav-item" data-section="home" aria-label="Navigate to Home">
           <i class="fa-solid fa-house"></i>
         </a>
-        <a href="#about-section" class="mobile-nav-item" data-section="about-section">
+        <a href="#about-section" class="mobile-nav-item" data-section="about-section" aria-label="Navigate to About">
           <i class="fa-solid fa-user"></i>
         </a>
-        <a href="#skills" class="mobile-nav-item" data-section="skills">
+        <a href="#skills" class="mobile-nav-item" data-section="skills" aria-label="Navigate to Skills">
           <i class="fas fa-code"></i>
         </a>
-        <a href="#projects" class="mobile-nav-item" data-section="projects">
+        <a href="#projects" class="mobile-nav-item" data-section="projects" aria-label="Navigate to Projects">
           <i class="fa-solid fa-folder-open"></i>
         </a>
-        <a href="#certificates" class="mobile-nav-item" data-section="certificates">
+        <a href="#certificates" class="mobile-nav-item" data-section="certificates" aria-label="Navigate to Certificates">
           <i class="fa-solid fa-award"></i>
         </a>
-        <a href="#contact" class="mobile-nav-item" data-section="contact">
+        <a href="#contact" class="mobile-nav-item" data-section="contact" aria-label="Navigate to Contact">
           <i class="fa-solid fa-phone"></i>
         </a>
       </div>
-      <!-- Right: Resume Button -->
-      <a href="./img/file/dummy.pdf" target="_blank" class="mobile-navbar-resume">
+      
+      <!-- Resume Button -->
+      <a href="./img/file/dummy.pdf" target="_blank" class="mobile-navbar-resume" aria-label="Download Resume">
         <i class="fa-solid fa-download"></i>
         <span>Resume</span>
       </a>
     </div>
   </nav>
-  </div>
-  <!-- Sidebar -->
-  <header class="sidebar" id="sidebar">
-    <div class="toggle-btn" id="toggleBtn">
-      <i id="toggleIcon" class="fas fa-grip-lines-vertical" title="Menu"></i>
-    </div>
+
+  <!-- ========== DESKTOP SIDEBAR ========== -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
     <div class="user">
-      <img src="img/profilepic.jpg" alt="Profile" />
-      <h3 class="name">Kevin B. Bueno</h3>
+      <img src="img/profilepic.jpg" alt="Kevin Barias Bueno - Profile Picture">
+      <h1 class="name">Kevin B. Bueno</h1>
       <p class="bio">Computer Engineering Student</p>
       <div class="resume">
-        <a href="./img/file/dummy.pdf" target="_blank"><i class="fa-solid fa-download"
-            title="View my resume"></i>Resume</a>
+        <a href="./img/file/dummy.pdf" target="_blank" aria-label="Download Resume">
+          <i class="fa-solid fa-download"></i> Resume
+        </a>
       </div>
     </div>
+    
     <nav class="nav-bar">
       <ul>
-        <li><a href="#home"><i class="fa-solid fa-house" style="margin-right: 10px" title="Go to Home"></i>Home</a></li>
-        <li><a href="#about-section"><i class="fa-solid fa-user" style="margin-right: 10px"
-              title="Go to About"></i>About</a></li>
-        <li><a href="#skills"><i class="fas fa-code" style="margin-right: 10px" title="Go to Skills"></i>Skills</a></li>
-        <li><a href="#projects"><i class="fa-solid fa-folder-open" style="margin-right: 10px"
-              title="Go to Projects"></i>Projects</a></li>
-        <li><a href="#certificates"><i class="fa-solid fa-award" style="margin-right: 10px"
-              title="Go to Certificates"></i>Certificates</a></li>
-        <li><a href="#contact"><i class="fa-solid fa-phone" style="margin-right: 10px"
-              title="Go to Contact"></i>Contact</a></li>
+        <li><a href="#home" aria-label="Navigate to Home"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="#about-section" aria-label="Navigate to About"><i class="fa-solid fa-user"></i>About</a></li>
+        <li><a href="#skills" aria-label="Navigate to Skills"><i class="fas fa-code"></i>Skills</a></li>
+        <li><a href="#projects" aria-label="Navigate to Projects"><i class="fa-solid fa-folder-open"></i>Projects</a></li>
+        <li><a href="#certificates" aria-label="Navigate to Certificates"><i class="fa-solid fa-award"></i>Certificates</a></li>
+        <li><a href="#contact" aria-label="Navigate to Contact"><i class="fa-solid fa-phone"></i>Contact</a></li>
       </ul>
     </nav>
-  </header>
-  <!-- Main content -->
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
   <main class="main-content">
-    <div class="headline" id="home">
+    
+    <!-- ===== HERO SECTION ===== -->
+    <section class="headline" id="home">
       <div class="headpic">
-        <img src="img/profilepic.jpg" alt="Kevin Bueno" />
+        <img src="img/profilepic.jpg" alt="Kevin Bueno - Computer Engineering Student" loading="lazy">
       </div>
       <div>
-        <h1 id="headline-typing"></h1>
-        <p>An aspiring <span class="se">Software Engineer</span> from the Philippines</p>
+        <h2 id="headline-typing" class="hero-title"></h2>
+        <p class="hero-subtitle">An aspiring <span class="se">Software Engineer</span> from the Philippines</p>
       </div>
+      
+      <!-- Social Icons -->
       <div class="icons">
-        <a href="https://www.facebook.com/kevin.b.bueno.5" target="_blank" title="Go to my fb account"><i
-            class="fab fa-facebook"></i></a>
-        <a href="https://www.linkedin.com/in/kevin-bueno-922174375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-          target="_blank" title="Go to my linkedin account"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:kevinbueno360@gmail.com" target="_blank"><i class="fas fa-envelope"
-            title="Send me an email message"></i></a>
-        <a href="https://github.com/KevzBueno101" target="_blank"><i class="fab fa-github"
-            title="Go to my GitHub account"></i></a>
-        <a href="tel:+639634930958" target="_blank" title="Call me"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://www.facebook.com/kevin.b.bueno.5" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook Profile">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kevin-bueno-922174375" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn Profile">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:kevinbueno360@gmail.com" aria-label="Send Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/KevzBueno101" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="tel:+639634930958" aria-label="Call Phone Number">
+          <i class="fa-solid fa-phone"></i>
+        </a>
       </div>
+      
+      <!-- CTA Button -->
       <div class="get-in-touch">
-        <a href="mailto:kevinbueno360@gmail.com"><i class="fa-solid fa-paper-plane"></i>Get in Touch</a>
+        <a href="mailto:kevinbueno360@gmail.com">
+          <i class="fa-solid fa-paper-plane"></i>Get in Touch
+        </a>
       </div>
-    </div>
-    <div class="about-section" id="about-section">
-      <div class="abouts">
-        <h2 class="section-title"><i class="fa-solid fa-user"></i>About</h2>
-      </div>
-      <p>
-        I'm Kevin Barias Bueno, a Computer Engineering student with a passion in software development and technology. I
-        love creating innovative solutions and exploring new technologies. I'm a quick learner and a team player who is
-        always eager to collaborate and learn from others.
-      </p><br>
-      <p>
-        I started my journey in web development and programming during my 12th grade in high school, and it has been a
-        thrilling ride ever since. February 2024, when I wrote my first hello world program using html/css. It was
-        during our intership/work immersion at DICT-Catanduanes. It was a great exposure for me in the world of web.
-        From coding simple programs to working on complex projects.
-        My journey in the tech world has been exciting, and I'm always eager to learn more. <br><br>
-        Behind the screen, I am a chess player; I like participating in different chess tournaments not just in our
-        school but also outside. I am also a fish hobbyist, I love to take care of my beautiful fishes and aquarium.
-      </p>
-    </div>
-    <div class="about-section">
-      <a href="#about-section "><i class="fa-solid fa-book-open" style="margin-right: 10px;"></i>Education</a>
-      <div class="about-education">
-        <div class="school-info">
-          <div class="school">
-            <h3>Catanduanes State University</h3>
-            <p>BS in Computer Engineering</p>
-            <p class="date"><i class="fa-solid fa-calendar"></i>2024 - Present</p>
-          </div>
-          <div class="school">
-            <h3>Calatagan High School</h3>
-            <p>TVL - CSS</p>
-            <p class="date"><i class="fa-solid fa-calendar"></i>2022 - 2024</p>
-            <details>
-              <summary>Awards Recieved:</summary>
-              <p> With High Honors, Computer Systems Servicing NCII passer, Outstanding Performance in
-                Work Immersion, Outstanding Performance in Communication Arts English</p>
-              <p>Relevant Courses: Install and Configure Computer Systems, Set up Computer Networks, Set up Computer
-                Servers, Maintain and Repair Computer Systems</p>
-              </p>
-            </details>
-
-          </div>
-        </div>
-      </div>
-      <div class="about-section">
-        <a href="#about-section "><i class="fa-solid fa-book-open" style="margin-right: 10px;"></i>Experience</a>
-        <div class="about-education">
-          <div class="">
-            <div class="school">
-              <h3>DICT- Catanduanes</h3>
-              <p>On-The-Job Trainee</p>
-              <p class="date"><i class="fa-solid fa-calendar"></i>Feb 8 - Feb 28</p>
-              <p>Successfully completed 80 hours of apprenticeship/ OJT Trainee program on DICT- Catanduanes. Had a
-                great experience on attending different
-                seminars and hands-on activities on different productivity tools such as Word, Excel, Photoshop, Windows
-                10 & Server installation, configuration, &
-                client-server collaboration & explore the fundamentals of web (html & css). And collaborate with other
-                interns and DICT officers.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Skills Section -->
-      <div class="skills-section" id="skills">
-        <h2 class="section-title"><i class="fas fa-code"></i> Skills & Tools</h2>
-        <div class="skills-container">
-          <div class="skills-category">
-            <h3>Languages</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fab fa-html5" style="color: #e34f26;"></i>
-                <span>HTML5</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fab fa-css3-alt" style="color: #1572b6;"></i>
-                <span>CSS3</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fab fa-js" style="color: #f7df1e;"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fab fa-c" style="color: #3776ab;"></i>
-                <span>C Language</span>
-              </div>
-              <div class="skill-badge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-                  height="40" , width="40" />
-                <span>C++</span>
-              </div>
-              <div class="skill-badge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                  height="40" , width="40" />
-                <span>Python</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-azuresqldatabase-plain colored"></i>
-                <span>SQL</span>
-              </div>
-            </div>
-          </div>
-          <div class="skills-category">
-            <h3>Frameworks & Libraries</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fab fa-react" style="color: #61dafb;"></i>
-                <span>React</span>
-              </div>
-              <div class="skill-badge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                  height="40" , width="40" />
-                <span>Tkinter</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-sqlite-plain-wordmark colored"></i>
-                <span>SQLite</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fab fa-bootstrap" style="color: #7952b3;"></i>
-                <span>Bootstrap</span>
-              </div>
-            </div>
-          </div>
-          <div class="skills-category">
-            <h3>Tools & Platforms</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fab fa-git-alt" style="color: #f05032;"></i>
-                <span>Git</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fas fa-terminal" style="color: #4d4d4d;"></i>
-                <span>CLI</span>
-              </div>
-              <div class="skill-badge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
-                  height="40" , width="40" />
-                <span>VS Code</span>
-              </div>
-              <div class="skill-badge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"
-                  height="40" , width="40" />
-                <span>Canva</span>
-              </div>
-              <div class="skill-badge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg"
-                  height="40" , width="40" />
-                <span>Arduino IDE</span>
-              </div>
-              <div class="skill-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
-                  <path fill="#2196F3" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path>
-                  <path fill="#FFF"
-                    d="M25 15.001H39V17H25zM25 19H39V21H25zM25 23.001H39V25.001H25zM25 27.001H39V29H25zM25 31H39V33.001H25z">
-                  </path>
-                  <path fill="#0D47A1" d="M27 42L6 38 6 10 27 6z"></path>
-                  <path fill="#FFF"
-                    d="M21.167,31.012H18.45l-1.802-8.988c-0.098-0.477-0.155-0.996-0.174-1.576h-0.032c-0.043,0.637-0.11,1.162-0.197,1.576l-1.85,8.988h-2.827l-2.86-14.014h2.675l1.536,9.328c0.062,0.404,0.111,0.938,0.143,1.607h0.042c0.019-0.498,0.098-1.051,0.223-1.645l1.97-9.291h2.622l1.785,9.404c0.062,0.348,0.119,0.846,0.17,1.511h0.031c0.02-0.515,0.073-1.035,0.16-1.563l1.503-9.352h2.468L21.167,31.012z">
-                  </path>
-                </svg>
-                <span>MS Word</span>
-              </div>
-              <div class="skill-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
-                  <path fill="#FF8A65" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path>
-                  <path fill="#FBE9E7"
-                    d="M24 29H38V31H24zM24 33H38V35H24zM30 15c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6h-6V15z">
-                  </path>
-                  <path fill="#FBE9E7" d="M32,13v6h6C38,15.687,35.313,13,32,13z"></path>
-                  <path fill="#E64A19" d="M27 42L6 38 6 10 27 6z"></path>
-                  <path fill="#FFF"
-                    d="M16.828,17H12v14h3v-4.823h1.552c1.655,0,2.976-0.436,3.965-1.304c0.988-0.869,1.484-2.007,1.482-3.412C22,18.487,20.275,17,16.828,17z M16.294,23.785H15v-4.364h1.294c1.641,0,2.461,0.72,2.461,2.158C18.755,23.051,17.935,23.785,16.294,23.785z">
-                  </path>
-                </svg>
-                <span>MS Powerpoint</span>
-              </div>
-              <div class="skill-badge">
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC2klEQVR4nGNgGAWjYBSMgmEJODtdpHjbPXy5210bOFtcNnM0OT1jGJSg3p5FcEqwttAkvzjBCb4TBfp9dvP3eL3h7fb8z9Pp8Z+73e0/V6vLf85m5/8D7VQG4TlJvJILI20k54anic0Jmyg2M+SIyPSg78JTA/8LTQ74LzjR779Av+9//l7v/wPuAbmlmYKyqxJtZJcn5MssjVskvST2qtSiqL+SCyL/S8yL+C8+J+y/2KzQ/6Izgv8PSg8orEn+L78q6b/cioT/ssvi/sssif0vtSj6PyUeMDziThY2OOJ2eEh7wPCIO+mxN+qB7lEP/B90HkAGMIfhA6MekEfyQO3pRSiGZ+2fhOIB1dlx/z/+/AqXrzkwd3B5QH5p/P/r7x/BDb/1/sl/idlhcA9MO78RLnf9zcP/Qr2+gy8PhO5qRQmhuJ1dYA8YLEr7/+PPL7i4z6rKwZuJtz44BXfouVe3wR5YcWM/XGzl9f2DMw/IQD1gviYPJbRTdvf+//PvL5gNygNqs+IGfynUf2Ed3JL3P77A2RUHZg3eUkgGyQNKi+L/P/vyBsWyy6/v/xeZFDA0KjLVxYn/n319i+KBR59e/ZeaGjo0PLDoxh64w198fQdnd59aOfiTUMD2xv///v8DW/D998//sTs64BaCMrfpgozB6wGFpfH/b75/Ardg4vn14GJ078PzcLEjjy//F+j1GZwe6L+4Hm74h59f/qstTAR7wG5l4f+//yCxAgJJWzoHXx5w2FT2/ydS+d94cglKW2j97SNwuRdf3v2XmRQyeDwgvzz+/6lXt+AOfP713X+FBbEoHjBZnPn/998/cDUzzm4cfElIaig3p2VGPeA8eCoyiVEPuI96YEh5wOCw2yGGETe4i3N4fUGUscTcsLhBP7xOzgSHwAS/Dv4+n82DdoKDaPCfgZGv102Fp8sjlLvdrY2z1WUbR7Pzc+INGAWjYBSMAoYhAgBEtnuV0kUiSgAAAABJRU5ErkJggg=="
-                  alt="ms-excel" height="40" width="40" />
-                <span>MS Excel</span>
-              </div>
-              <div class="skill-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
-                  <path fill="#546e7a"
-                    d="M30.7,7.27L28.33,9.1c-1.605-2.067-4.068-3.209-6.697-3.092C17.313,6.2,14,9.953,14,14.277l0,9.143	l10.5,6.12l-1,1.72l-11.706-6.827C11.302,24.146,11,23.62,11,23.051l0-8.687C11,8.1,16.129,2.79,22.39,3.007	C25.669,3.12,28.68,4.663,30.7,7.27z">
-                  </path>
-                  <path fill="#546e7a"
-                    d="M12.861,9.833l0.4,2.967c-2.592,0.357-4.813,1.919-6.026,4.254c-1.994,3.837-0.4,8.582,3.345,10.745	l7.918,4.571l10.55-6.033l0.99,1.726l-11.765,6.724c-0.494,0.282-1.101,0.281-1.594-0.003l-7.523-4.343	C3.73,27.308,1.696,20.211,5.014,14.898C6.752,12.114,9.594,10.279,12.861,9.833z">
-                  </path>
-                  <path fill="#546e7a"
-                    d="M6.161,26.563l2.77,1.137c-0.987,2.423-0.745,5.128,0.671,7.346	c2.326,3.645,7.233,4.638,10.977,2.476l7.918-4.572l0.05-12.153l1.99,0.006l-0.059,13.551c-0.002,0.569-0.307,1.094-0.8,1.379	l-7.523,4.343c-5.425,3.132-12.588,1.345-15.531-4.185C5.083,32.994,4.914,29.616,6.161,26.563z">
-                  </path>
-                  <path fill="#546e7a"
-                    d="M17.3,40.73l2.37-1.83c1.605,2.067,4.068,3.209,6.697,3.092C30.687,41.8,34,38.047,34,33.723l0-9.143	l-10.5-6.12l1-1.72l11.706,6.827C36.698,23.854,37,24.38,37,24.949l0,8.687c0,6.264-5.13,11.574-11.39,11.358	C22.331,44.88,19.32,43.337,17.3,40.73z">
-                  </path>
-                  <path fill="#546e7a"
-                    d="M35.139,38.167l-0.4-2.967c2.592-0.357,4.813-1.919,6.026-4.254c1.994-3.837,0.4-8.582-3.345-10.745	l-7.918-4.571l-10.55,6.033l-0.99-1.726l11.765-6.724c0.494-0.282,1.101-0.281,1.594,0.003l7.523,4.343	c5.425,3.132,7.459,10.229,4.141,15.543C41.248,35.886,38.406,37.721,35.139,38.167z">
-                  </path>
-                  <path fill="#546e7a"
-                    d="M41.839,21.437l-2.77-1.137c0.987-2.423,0.745-5.128-0.671-7.346	c-2.326-3.645-7.233-4.638-10.977-2.476l-7.918,4.572l-0.05,12.153l-1.99-0.006l0.059-13.551c0.002-0.569,0.307-1.094,0.8-1.379	l7.523-4.343c5.425-3.132,12.588-1.345,15.531,4.185C42.917,15.006,43.086,18.384,41.839,21.437z">
-                  </path>
-                </svg>
-                <span>ChatGPT</span>
-              </div>
-              <div class="skill-badge">
-                <img width="40" height="40" src="https://img.icons8.com/fluency/48/claude-ai.png" alt="claude-ai" />
-                <span>Claude AI</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-notion-plain"></i>
-                <span>Notion</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Projects Section -->
-      <div class="projects-section" id="projects">
-        <h2 class="section-title"><i class="fas fa-folder-open"></i> My Projects</h2>
-        <div class="projects-carousel">
-          <!-- Project 1 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="./img/ss.png" alt="Project 1">
-              <div class="project-links">
-                <a href="#" class="demo-btn" id="openDemoModal">Live Demo</a>
-                <a href="https://github.com/KevzBueno101/GWA-Calculator/blob/main/GwaCalculator/main.py"
-                  class="code-btn">View Code</a>
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>GWA Calculator</h3>
-              <p>A clean, functional, and user-friendly GWA (General Weighted Average) Calculator built with Python and
-                CustomTkinter.</p>
-              <div class="project-tags">
-                <span>Python</span>
-                <span>CustomTkinter</span>
-                <span>Copilot</span>
-                <span>Vs Code</span>
-              </div>
-            </div>
-          </div>
-          <!-- Demo   Modal -->
-          <div id="demoModal" class="modal">
-            <div class="modal-content">
-              <span class="close" id="closeDemoModal">&times;</span>
-              <video controls width="100%" poster="./demo/gwaCal.mp4">
-                <source src="demo/gwaCal.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-          <!-- Project 2 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="./img/portfolio/pdf-converter.png" alt="Project 2">
-              <div class="project-links">
-                <a href="/demo/pdf-docx-converter.mp4" class="demo-btn">Live Demo</a>
-                <a href="https://github.com/KevzBueno101/PDF-DOCX-Converter" class="code-btn">View Code</a>
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>PDF to Docx Converter</h3>
-              <p>A simple, easy and intuitive stand-alone desktop application built using CustomTkinter and pdf2docx for
-                converting PDF files into editable DOCX documents on Windows. </p>
-              <div class="project-tags">
-                <span>Python</span>
-                <span>Tkinter</span>
-                <span>SQLite3</span>
-              </div>
-            </div>
-          </div>
-          <!-- Demo Modal -->
-          <div id="demoModal" class="modal">
-            <div class="modal-content">
-              <span class="close" id="closeDemoModal">&times;</span>
-              <video controls width="100%" poster="./demo/pdf-docx-converter.mp4">
-                <source src="demo/pdf-docx-converter.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-          <!-- Project 3 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="https://via.placeholder.com/400x250/333/666?text=Project+3" alt="Project 3">
-              <div class="project-links">
-                <a href="#" class="demo-btn">Live Demo</a>
-                <a href="#" class="code-btn">View Code</a>
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Weather Dashboard</h3>
-              <p>Real-time weather information with 5-day forecast and location search functionality.</p>
-              <div class="project-tags">
-                <span>JavaScript</span>
-                <span>API</span>
-                <span>Bootstrap</span>
-                <span>CSS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev">❮</button>
-          <div class="carousel-dots"></div>
-          <button class="carousel-btn next">❯</button>
-        </div>
-      </div>
-      <!-- Certificate -->
-      <h2 class="section-title"><i class="fa-solid fa-award"></i>Certificates</h2>
-      <section>
-        <section id="certificates">
-          <div class="cert-container">
-            <div class="cert-card">
-              <img src="./img/cert/Certificate of Participation -  Kevin B. Bueno_page-0001.jpg" alt="Certificate 1">
-              <a href="./img/cert/Certificate of Participation -  Kevin B. Bueno_page-0001.jpg" class="view-btn"
-                target="_blank"><i class="fa-thin fa-expand" style="color: #74C0FC;"></i><span
-                  class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/Data-Visualization-Zuitt.png" alt="Certificate 1">
-              <a href="./img/cert/Data-Visualization-Zuitt.png" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/Building-Blocks-of-Programming.png" alt="Certificate 3">
-              <a href="./img/cert/Building-Blocks-of-Programming.png" alt="Certificate 3" class="view-btn"
-                target="_blank"><i class="fa-thin fa-expand" style="color: #74C0FC;"></i><span
-                  class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/DICT_SDDT_signed_page-0001.jpg" alt="Certificate 3">
-              <a href="./img/cert/DICT_SDDT_signed_page-0001.jpg" alt="Certificate 3" class="view-btn"
-                target="_blank"><i class="fa-thin fa-expand" style="color: #74C0FC;"></i><span
-                  class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/git-cert.png" alt="Certificate 3">
-              <a href="./img/cert/git-cert.png" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/Arduino.png" alt="Certificate 2">
-              <a href="./img/cert/Arduino.png" class="view-btn" target="_blank"><i class="fa-thin fa-expand"
-                  style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/Screenshot 2025-10-28 150815.png" alt="Certificate 3">
-              <a href="./img/cert/Screenshot 2025-10-28 150815.png" alt="Certificate 3" class="view-btn"
-                target="_blank"><span class="view-txt"><i class="fa-thin fa-expand" style="color: #74C0FC;"></i><span
-                    class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/CodeCred - Online Programming Certification Platform_page-0001.jpg"
-                alt="Certificate 3">
-              <a href="./img/cert/CodeCred - Online Programming Certification Platform_page-0001.jpg"
-                alt="Certificate 3" class="view-btn" target="_blank"><i class="fa-thin fa-expand"
-                  style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/Python-DAP.png" alt="Certificate 3">
-              <a href="./img/cert/Python-DAP.png" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/basic-python.png" alt="Certificate 3">
-              <a href="./img/cert/basic-python.png" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/HTML_CSS.jpg" alt="Certificate 3">
-              <a href="./img/cert/HTML_CSS.jpg" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/icpep.png" alt="Certificate 3">
-              <a href="./img/cert/icpep.png" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/DICT-WI-CERT.jpg" alt="Certificate 3">
-              <a href="./img/cert/DICT-WI-CERT.jpg" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/NCII.png" alt="Certificate 3">
-              <a href="./img/cert/NCII.png" alt="Certificate 3" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-            <div class="cert-card">
-              <img src="./img/cert/Certificate_of_Completion_CSS_JDVP.jpg" alt="Certificate 2">
-              <a href="./img/cert/Certificate_of_Completion_CSS_JDVP.jpg" class="view-btn" target="_blank"><i
-                  class="fa-thin fa-expand" style="color: #74C0FC;"></i><span class="view-txt">View</span></a>
-            </div>
-          </div>
-        </section>
-        <!-- Badge Section -->
-        <div class="badge-container">
-          <div class="badge-wrapper">
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="25a2a7f7-9e7e-4237-a638-1ecda125039a" data-share-badge-host="https://www.credly.com">
-            </div>
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="a41320ea-93fe-4cdc-b424-390fd604a044" data-share-badge-host="https://www.credly.com">
-            </div>
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="885906be-600f-4ef6-9e80-82789d110266" data-share-badge-host="https://www.credly.com">
-            </div>
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="48cf9caa-6ed7-4e31-a86b-db2002946a33" data-share-badge-host="https://www.credly.com">
-            </div>
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="73ed7c7a-d2e4-46b6-9b45-350b778e1c84" data-share-badge-host="https://www.credly.com">
-            </div>
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="9e868d43-2a49-4c44-b1af-b8cec5375af8" data-share-badge-host="https://www.credly.com">
-            </div>
-            <div data-iframe-width="210" data-iframe-height="270"
-              data-share-badge-id="613b12bc-1227-43cf-867b-1fcb92f752cd" data-share-badge-host="https://www.credly.com">
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-      </section>
-    </div>
     </section>
-    <h2 class="section-title"><i class="fa-solid fa-phone"></i>Connect with me</h2>
-    <section>
-      <!-- Contact Section -->
-      <div class="contact" id="contact">
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section" id="about-section">
+      <h2 class="section-title"><i class="fa-solid fa-user"></i>About Me</h2>
+      
+      <p>
+        Computer Engineering student at <strong>Catanduanes State University</strong> with hands-on experience in web development. Completed <strong>80 hours of technical training</strong> at DICT-Catanduanes, where I gained proficiency in web technologies, server configuration, and collaborative development.
+      </p>
+      
+      <p>
+        My journey in tech began in February 2024 during my senior high school internship at DICT-Catanduanes, where I wrote my first "Hello World" program and discovered my passion for creating solutions through code. Since then, I've evolved from building simple HTML/CSS pages to developing full-featured desktop applications using Python and modern frameworks.
+      </p>
+      
+      <p>
+        <strong>Behind the screen:</strong> I'm a competitive chess player who enjoys strategic thinking and problem-solving which teaches me patience, attention to detail, and systems thinking—skills that translate well into software development.
+      </p>
+
+      <!-- Education -->
+      <div class="about-subsection">
+        <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+        <div class="about-card">
+          <h4>Catanduanes State University</h4>
+          <p class="degree">BS in Computer Engineering</p>
+          <p class="date"><i class="fa-solid fa-calendar"></i> 2024 - Present</p>
+        </div>
+        
+        <div class="about-card">
+          <h4>Calatagan High School</h4>
+          <p class="degree">Technical-Vocational-Livelihood (TVL) - Computer Systems Servicing</p>
+          <p class="date"><i class="fa-solid fa-calendar"></i> 2022 - 2024</p>
+          <details>
+            <summary>Awards & Achievements</summary>
+            <ul>
+              <li>With High Honors</li>
+              <li>Computer Systems Servicing NC II Passer</li>
+              <li>Outstanding Performance in Work Immersion</li>
+              <li>Outstanding Performance in Communication Arts (English)</li>
+            </ul>
+            <p><strong>Relevant Courses:</strong> Install and Configure Computer Systems, Set up Computer Networks, Set up Computer Servers, Maintain and Repair Computer Systems</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="about-subsection">
+        <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+        <div class="about-card">
+          <h4>DICT-Catanduanes</h4>
+          <p class="degree">On-The-Job Trainee</p>
+          <p class="date"><i class="fa-solid fa-calendar"></i> February 8-28, 2024</p>
+          <p>
+            Completed an intensive 80-hour technical training program covering modern productivity tools and web fundamentals. Participated in hands-on workshops on <strong>Microsoft Office</strong>, <strong>Adobe Photoshop</strong>, <strong>Windows Server configuration</strong>, and <strong>HTML/CSS development</strong>. Collaborated with DICT officers and fellow interns on client-server networking activites.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills-section" id="skills">
+      <h2 class="section-title"><i class="fas fa-code"></i> Skills & Tools</h2>
+      
+      <div class="skills-container">
+        <!-- Languages -->
+        <div class="skills-category">
+          <h3>Programming Languages</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fab fa-html5" style="color: #e34f26;"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fab fa-css3-alt" style="color: #1572b6;"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fab fa-js" style="color: #f7df1e;"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-c-plain" style="color: #3776ab;"></i>
+              <span>C Language</span>
+            </div>
+            <div class="skill-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" height="40" width="40">
+              <span>C++</span>
+            </div>
+            <div class="skill-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" height="40" width="40">
+              <span>Python</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-azuresqldatabase-plain colored"></i>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frameworks & Libraries -->
+        <div class="skills-category">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fab fa-react" style="color: #61dafb;"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Tkinter" height="40" width="40">
+              <span>Tkinter</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-sqlite-plain-wordmark colored"></i>
+              <span>SQLite</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fab fa-bootstrap" style="color: #7952b3;"></i>
+              <span>Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="skills-category">
+          <h3>Tools & Platforms</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fab fa-git-alt" style="color: #f05032;"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fas fa-terminal" style="color: #4d4d4d;"></i>
+              <span>CLI</span>
+            </div>
+            <div class="skill-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" height="40" width="40">
+              <span>VS Code</span>
+            </div>
+            <div class="skill-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" height="40" width="40">
+              <span>Canva</span>
+            </div>
+            <div class="skill-badge">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg" alt="Arduino IDE" height="40" width="40">
+              <span>Arduino IDE</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-notion-plain"></i>
+              <span>Notion</span>
+            </div>
+            <div class="skill-badge">
+              <img width="40" height="40" src="https://img.icons8.com/fluency/48/claude-ai.png" alt="Claude AI">
+              <span>Claude AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects-section" id="projects">
+      <h2 class="section-title"><i class="fas fa-folder-open"></i> Featured Projects</h2>
+      
+      <div class="projects-carousel">
+        <!-- Project 1: GWA Calculator -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="./img/ss.png" alt="GWA Calculator Screenshot" loading="lazy">
+            <div class="project-links">
+              <a href="#" class="demo-btn" id="openDemoModal1" aria-label="View GWA Calculator Demo">Live Demo</a>
+              <a href="https://github.com/KevzBueno101/GWA-Calculator/blob/main/GwaCalculator/main.py" target="_blank" rel="noopener noreferrer" class="code-btn" aria-label="View GWA Calculator Source Code">View Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>GWA Calculator</h3>
+            <p><strong>Problem:</strong> Students manually calculate their General Weighted Average using error-prone spreadsheets.</p>
+            <p><strong>Solution:</strong> Built a desktop application with real-time grade validation and an intuitive interface for accurate GWA computation.</p>
+            <p><strong>Impact:</strong> Streamlined academic planning for 100+ fellow students.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>CustomTkinter</span>
+              <span>GitHub Copilot</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: PDF to DOCX Converter -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="./img/portfolio/pdf-converter.png" alt="PDF to DOCX Converter Screenshot" loading="lazy">
+            <div class="project-links">
+              <a href="#" class="demo-btn" id="openDemoModal2" aria-label="View PDF Converter Demo">Live Demo</a>
+              <a href="https://github.com/KevzBueno101/PDF-DOCX-Converter" target="_blank" rel="noopener noreferrer" class="code-btn" aria-label="View PDF Converter Source Code">View Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>PDF to DOCX Converter</h3>
+            <p><strong>Problem:</strong> Users need to manually retype PDF content into editable documents.</p>
+            <p><strong>Solution:</strong> Created a standalone desktop app that converts PDFs to editable DOCX files with preserved formatting.</p>
+            <p><strong>Impact:</strong> Saves users hours of manual transcription work.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>CustomTkinter</span>
+              <span>pdf2docx</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Weather Dashboard (Placeholder) -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/400x250/333/666?text=Coming+Soon" alt="Weather Dashboard - Coming Soon" loading="lazy">
+            <div class="project-links">
+              <a href="#" class="demo-btn" aria-label="Coming Soon">Coming Soon</a>
+              <a href="#" class="code-btn" aria-label="Coming Soon">View Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Weather Dashboard</h3>
+            <p>Real-time weather information with 5-day forecast and location search functionality. Currently in development.</p>
+            <div class="project-tags">
+              <span>JavaScript</span>
+              <span>API</span>
+              <span>Bootstrap</span>
+              <span>CSS</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Previous Project">❮</button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn next" aria-label="Next Project">❯</button>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATES SECTION ===== -->
+    <section id="certificates">
+      <h2 class="section-title"><i class="fa-solid fa-award"></i> Certificates</h2>
+      
+      <div class="cert-container">
+        <div class="cert-card">
+          <img src="./img/cert/Certificate of Participation -  Kevin B. Bueno_page-0001.jpg" alt="Certificate of Participation" loading="lazy">
+          <a href="./img/cert/Certificate of Participation -  Kevin B. Bueno_page-0001.jpg" class="view-btn" target="_blank" rel="noopener noreferrer" aria-label="View Certificate">
+            <i class="fa-solid fa-expand"></i><span class="view-txt">View</span>
+          </a>
+        </div>
+        
+        <div class="cert-card">
+          <img src="./img/cert/Data-Visualization-Zuitt.png" alt="Data Visualization Certificate" loading="lazy">
+          <a href="./img/cert/Data-Visualization-Zuitt.png" class="view-btn" target="_blank" rel="noopener noreferrer" aria-label="View Certificate">
+            <i class="fa-solid fa-expand"></i><span class="view-txt">View</span>
+          </a>
+        </div>
+        
+        <div class="cert-card">
+          <img src="./img/cert/Building-Blocks-of-Programming.png" alt="Building Blocks of Programming Certificate" loading="lazy">
+          <a href="./img/cert/Building-Blocks-of-Programming.png" class="view-btn" target="_blank" rel="noopener noreferrer" aria-label="View Certificate">
+            <i class="fa-solid fa-expand"></i><span class="view-txt">View</span>
+          </a>
+        </div>
+        
+        <div class="cert-card">
+          <img src="./img/cert/NCII.png" alt="NC II Certificate" loading="lazy">
+          <a href="./img/cert/NCII.png" class="view-btn" target="_blank" rel="noopener noreferrer" aria-label="View Certificate">
+            <i class="fa-solid fa-expand"></i><span class="view-txt">View</span>
+          </a>
+        </div>
+        
+        <!-- Add more certificates as needed -->
+      </div>
+
+      <!-- Credly Badges -->
+      <div class="badge-container">
+        <h3>Digital Badges</h3>
+        <div class="badge-wrapper">
+          <div data-iframe-width="210" data-iframe-height="270" data-share-badge-id="25a2a7f7-9e7e-4237-a638-1ecda125039a" data-share-badge-host="https://www.credly.com"></div>
+          <div data-iframe-width="210" data-iframe-height="270" data-share-badge-id="a41320ea-93fe-4cdc-b424-390fd604a044" data-share-badge-host="https://www.credly.com"></div>
+          <div data-iframe-width="210" data-iframe-height="270" data-share-badge-id="885906be-600f-4ef6-9e80-82789d110266" data-share-badge-host="https://www.credly.com"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact">
+      <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Get In Touch</h2>
+      
+      <div class="contact">
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="d15d9150-d82e-45a8-8373-9baaa00f3b79">
-          <p>Send Me a Message</p>
-          <input type="text" name="Name" placeholder="Juan Dela Cruz" class="field" required />
-          <input type="email" name="Email" placeholder="example@gmail.com" class="field" required />
-          <textarea name="Message" id="" class="field" placeholder="message..."></textarea>
-          <button type="submit" class="field">Send Message</button>
+          <h3>Send Me a Message</h3>
+          
+          <label for="name" class="visually-hidden">Your Name</label>
+          <input type="text" id="name" name="Name" placeholder="Juan Dela Cruz" class="field" required aria-required="true">
+          
+          <label for="email" class="visually-hidden">Your Email</label>
+          <input type="email" id="email" name="Email" placeholder="example@gmail.com" class="field" required aria-required="true">
+          
+          <label for="message" class="visually-hidden">Your Message</label>
+          <textarea id="message" name="Message" class="field" placeholder="Your message here..." rows="5" required aria-required="true"></textarea>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
         </form>
       </div>
     </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
-      <p>© 2025 Kevin B. Bueno. All rights reserved.</p>
+      <p>&copy; 2025 Kevin B. Bueno. All rights reserved.</p>
     </footer>
   </main>
-  <!-- script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <!-- Back to Top Button -->
-  <a href="#" class="back-to-top">
+
+  <!-- ========== MODALS ========== -->
+  <!-- Modal 1: GWA Calculator -->
+  <div id="demoModal1" class="modal" role="dialog" aria-labelledby="modal1Title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="closeDemoModal1" aria-label="Close Modal">&times;</button>
+      <h2 id="modal1Title">GWA Calculator Demo</h2>
+      <video controls width="100%" aria-label="GWA Calculator Demo Video">
+        <source src="demo/gwaCal.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Modal 2: PDF Converter -->
+  <div id="demoModal2" class="modal" role="dialog" aria-labelledby="modal2Title" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="closeDemoModal2" aria-label="Close Modal">&times;</button>
+      <h2 id="modal2Title">PDF to DOCX Converter Demo</h2>
+      <video controls width="100%" aria-label="PDF Converter Demo Video">
+        <source src="demo/pdf-docx-converter.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- ========== BACK TO TOP BUTTON ========== -->
+  <a href="#home" class="back-to-top" aria-label="Back to Top">
     <i class="fas fa-arrow-up"></i>
   </a>
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+  <!-- Credly Badges -->
+  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+  
+  <!-- Custom JavaScript -->
   <script src="js/script.js"></script>
 </body>
-
 </html>

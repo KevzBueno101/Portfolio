@@ -1,23 +1,10 @@
+/* ============================================
+   KEVIN BUENO PORTFOLIO - JAVASCRIPT
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Toggle Sidebar
-  const toggleBtn = document.getElementById('toggleBtn');
-  const sidebar = document.getElementById('sidebar');
-  const mainContent = document.querySelector('.main-content');
-  const backToTopBtn = document.querySelector('.back-to-top');
-
-  // Toggle sidebar on button click
-  toggleBtn.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      // Mobile view: show/hide sidebar
-      sidebar.classList.toggle('active');
-      mainContent.classList.toggle('blur');
-    } else {
-      // Desktop view: collapse/expand sidebar
-      sidebar.classList.toggle('collapsed');
-    }
-  });
-
-  // Typing Effect
+  
+  // ===== TYPING EFFECT =====
   function typeText(text, element, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -32,13 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }, speed);
   }
 
-  // Initialize typing effect
   const headline = document.getElementById('headline-typing');
   if (headline) {
     typeText("Hi, I'm Kevin", headline, 100);
   }
 
-  // Back to Top Button
+  // ===== BACK TO TOP BUTTON =====
+  const backToTopBtn = document.querySelector('.back-to-top');
+  
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
       backToTopBtn.classList.add('visible');
@@ -55,17 +43,130 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initialize Skill Bars
-  function initSkillBars() {
-    const skills = document.querySelectorAll('.skill');
-    skills.forEach(skill => {
-      const level = skill.getAttribute('data-level');
-      const levelBar = skill.querySelector('.skill-level');
-      levelBar.style.width = `${level}%`;
+  // ===== MOBILE NAVBAR SCROLL EFFECT =====
+  const mobileNavbar = document.getElementById('mobileNavbar');
+  const navItems = document.querySelectorAll('.mobile-nav-item');
+
+  if (mobileNavbar) {
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth <= 768) {
+        if (window.scrollY > 50) {
+          mobileNavbar.classList.add('scrolled');
+        } else {
+          mobileNavbar.classList.remove('scrolled');
+        }
+        highlightActiveSection();
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        mobileNavbar.classList.remove('scrolled');
+      }
     });
   }
 
-  // Initialize Project Carousel
+  // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const navbarHeight = mobileNavbar ? mobileNavbar.offsetHeight : 0;
+        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+
+        // Update active state
+        navItems.forEach(nav => nav.classList.remove('active'));
+        if (this.classList.contains('mobile-nav-item')) {
+          this.classList.add('active');
+        }
+      }
+    });
+  });
+
+  // ===== HIGHLIGHT ACTIVE SECTION =====
+  function highlightActiveSection() {
+    const scrollPosition = window.scrollY + 150;
+    const navbarHeight = mobileNavbar ? mobileNavbar.offsetHeight : 0;
+
+    const sections = [
+      { id: 'home', element: document.getElementById('home') || document.querySelector('.headline') },
+      { id: 'about-section', element: document.getElementById('about-section') },
+      { id: 'skills', element: document.getElementById('skills') },
+      { id: 'projects', element: document.getElementById('projects') },
+      { id: 'certificates', element: document.getElementById('certificates') },
+      { id: 'contact', element: document.getElementById('contact') }
+    ];
+
+    let currentSection = null;
+
+    sections.forEach(section => {
+      if (section.element) {
+        const sectionTop = section.element.offsetTop - navbarHeight;
+        const sectionBottom = sectionTop + section.element.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSection = section.id;
+        }
+      }
+    });
+
+    // Special cases
+    if (window.scrollY < 100) {
+      currentSection = 'home';
+    }
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+      currentSection = 'contact';
+    }
+
+    // Update active states
+    if (currentSection) {
+      navItems.forEach(item => {
+        const itemSection = item.getAttribute('data-section');
+        if (itemSection === currentSection) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      // Update desktop sidebar
+      document.querySelectorAll('.nav-bar a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSection}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  // Initialize active state
+  if (navItems.length > 0) {
+    navItems[0].classList.add('active');
+  }
+
+  // Run on load
+  if (window.innerWidth <= 768) {
+    highlightActiveSection();
+  }
+
+  window.addEventListener('load', function() {
+    if (window.innerWidth <= 768) {
+      highlightActiveSection();
+    }
+  });
+
+  // ===== PROJECT CAROUSEL =====
   function initProjectCarousel() {
     const carousel = document.querySelector('.projects-carousel');
     if (!carousel) return;
@@ -88,8 +189,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.carousel-btn.next');
 
     function updateCarousel() {
-      const offset = -currentIndex * 100;
-      carousel.style.transform = `translateX(${offset}%)`;
+      const cardWidth = projects[0].offsetWidth;
+      const gap = 30; // Gap between cards
+      const offset = currentIndex * (cardWidth + gap);
+      carousel.scrollTo({
+        left: offset,
+        behavior: 'smooth'
+      });
       
       // Update active dot
       dots.forEach((dot, index) => {
@@ -98,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function goToSlide(index) {
-      currentIndex = (index + projects.length) % projects.length;
+      currentIndex = Math.max(0, Math.min(index, projects.length - 1));
       updateCarousel();
     }
 
@@ -113,63 +219,64 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Event Listeners
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 
     // Auto-advance carousel
     let carouselInterval = setInterval(nextSlide, 5000);
 
     // Pause on hover
-    carousel.parentElement.addEventListener('mouseenter', () => {
-      clearInterval(carouselInterval);
-    });
+    if (carousel.parentElement) {
+      carousel.parentElement.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+      });
 
-    carousel.parentElement.addEventListener('mouseleave', () => {
-      carouselInterval = setInterval(nextSlide, 5000);
-    });
+      carousel.parentElement.addEventListener('mouseleave', () => {
+        carouselInterval = setInterval(nextSlide, 5000);
+      });
+    }
   }
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-
-        // Close mobile menu if open
-        if (window.innerWidth <= 768) {
-          sidebar.classList.remove('active');
-          mainContent.classList.remove('blur');
-        }
-      }
-    });
-  });
-
-  // Form submission
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Add form submission logic here
-      alert('Thank you for your message! I will get back to you soon.');
-      this.reset();
-    });
-  }
-
-  // Initialize components
-  initSkillBars();
   initProjectCarousel();
 
-  // Animate elements on scroll
+  // ===== MODAL FUNCTIONALITY =====
+  function setupModal(modalId, openBtnId, closeBtnId) {
+    const modal = document.getElementById(modalId);
+    const openBtn = document.getElementById(openBtnId);
+    const closeBtn = document.getElementById(closeBtnId);
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  }
+
+  // Setup modals
+  setupModal('demoModal1', 'openDemoModal1', 'closeDemoModal1');
+  setupModal('demoModal2', 'openDemoModal2', 'closeDemoModal2');
+
+  // ===== SCROLL ANIMATIONS =====
   const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.project-card, .skill-category, .contact-item');
+    const elements = document.querySelectorAll('.project-card, .skills-category, .cert-card, .about-card');
     
     elements.forEach(element => {
       const elementTop = element.getBoundingClientRect().top;
@@ -183,156 +290,102 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Set initial styles for animation
-  document.querySelectorAll('.project-card, .skill-category, .contact-item').forEach(el => {
+  document.querySelectorAll('.project-card, .skills-category, .cert-card, .about-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   });
 
-  // Run once on load
+  // Run animations
   setTimeout(animateOnScroll, 500);
-  
-  // Run on scroll
   window.addEventListener('scroll', animateOnScroll);
-});
-// Mobile Navbar - Glassmorphism, Smooth Scroll, and Active Section Highlighting
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileNavbar = document.getElementById('mobileNavbar');
-  const navItems = document.querySelectorAll('.mobile-nav-item');
 
-  // Glassmorphism scroll effect
-  if (mobileNavbar) {
-    window.addEventListener('scroll', function() {
-      if (window.innerWidth <= 768) {
-        if (window.scrollY > 50) {
-          mobileNavbar.classList.add('scrolled');
-        } else {
-          mobileNavbar.classList.remove('scrolled');
+  // ===== FORM VALIDATION (Optional Enhancement) =====
+  const contactForm = document.querySelector('form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+
+      // Basic validation (HTML5 handles most of this)
+      if (name && email && message) {
+        if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+          e.preventDefault();
+          alert('Please fill in all fields.');
+          return false;
         }
-
-        // Highlight active section
-        highlightActiveSection();
       }
-    });
-
-    // Remove scrolled class on resize if not mobile
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        mobileNavbar.classList.remove('scrolled');
-      }
+      
+      // Form will submit normally to Web3Forms
     });
   }
 
-  // Smooth scroll to sections when clicking nav items
-  navItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        const navbarHeight = mobileNavbar ? mobileNavbar.offsetHeight : 0;
-        const targetPosition = targetSection.offsetTop - navbarHeight - 20;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-
-        // Remove active class from all items
-        navItems.forEach(nav => nav.classList.remove('active'));
-        // Add active class to clicked item
-        this.classList.add('active');
-      }
-    });
-  });
-
-  // Function to highlight active section based on scroll position
-  function highlightActiveSection() {
-    const scrollPosition = window.scrollY + 150; // Offset for better detection
-    const navbarHeight = mobileNavbar ? mobileNavbar.offsetHeight : 0;
-
-    // Get all sections with IDs
-    const sections = [
-      { id: 'home', element: document.getElementById('home') || document.querySelector('.headline') },
-      { id: 'about-section', element: document.getElementById('about-section') },
-      { id: 'skills', element: document.getElementById('skills') },
-      { id: 'projects', element: document.getElementById('projects') },
-      { id: 'certificates', element: document.getElementById('certificates') },
-      { id: 'contact', element: document.getElementById('contact') }
-    ];
-
-    let currentSection = null;
-
-    // Find which section we're currently in
-    sections.forEach(section => {
-      if (section.element) {
-        const sectionTop = section.element.offsetTop - navbarHeight;
-        const sectionBottom = sectionTop + section.element.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          currentSection = section.id;
-        }
-      }
-    });
-
-    // Special case: if at the very top, activate Home
-    if (window.scrollY < 100) {
-      currentSection = 'home';
-    }
-
-    // Special case: if at the very bottom, activate last section (contact)
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-      currentSection = 'contact';
-    }
-
-    // Update active states
-    if (currentSection) {
-      navItems.forEach(item => {
-        const itemSection = item.getAttribute('data-section');
-        if (itemSection === currentSection) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
+  // ===== KEYBOARD NAVIGATION =====
+  document.addEventListener('keydown', function(e) {
+    // Escape key closes modals
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal.active').forEach(modal => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
       });
     }
-  }
-
-  // Initialize - set first item as active
-  if (navItems.length > 0) {
-    navItems[0].classList.add('active');
-  }
-
-  // Run once on load
-  if (window.innerWidth <= 768) {
-    highlightActiveSection();
-  }
-
-  // Also run on window load to ensure all elements are loaded
-  window.addEventListener('load', function() {
-    if (window.innerWidth <= 768) {
-      highlightActiveSection();
-    }
   });
+
+  // ===== PERFORMANCE: LAZY LOADING (if needed) =====
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    // Observe all images with loading="lazy"
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+
+  // ===== CONSOLE MESSAGE =====
+  console.log('%c👋 Hello! Thanks for checking out my portfolio!', 'font-size: 18px; color: #64ffda; font-weight: bold;');
+  console.log('%cInterested in the code? Check out the repository on GitHub!', 'font-size: 14px; color: #8892b0;');
+  console.log('%c🚀 Built with HTML, CSS, and JavaScript', 'font-size: 12px; color: #ccd6f6;');
 });
 
-// Modal functionality
-document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById('demoModal');
-  var btn = document.getElementById('openDemoModal');
-  var span = document.getElementById('closeDemoModal');
+// ===== UTILITY FUNCTIONS =====
 
-  btn.onclick = function(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-  }
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+// Debounce function for performance
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Throttle function for scroll events
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
     }
-  }
-});
+  };
+}
+infiniteTypeText("Hi, I'm Kevin", headline, 100, 100);
+//               ↑               ↑        ↑    ↑
+//               text          element  type  pause
+//                                      speed  time
