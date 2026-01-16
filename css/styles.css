@@ -202,6 +202,7 @@ a:hover {
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
   overflow-y: auto;
+  text-decoration: none;
 }
 
 .user {
@@ -1084,5 +1085,10 @@ footer p {
   .skill-badge img {
     width: 30px;
     height: 30px;
+  }
+  .mobile-navbar .icons i {
+    padding: 6px 8px;
+    width: 15px;
+    height: 15px;
   }
 }
