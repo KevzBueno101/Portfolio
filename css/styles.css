@@ -16,6 +16,9 @@
   --hover-bg: rgba(100, 255, 218, 0.1);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  --border-radius: 10px;
+  --border-radius-sm: 5px;
+  --border-radius-lg: 50px;
 }
 
 /* === RESET & BASE STYLES === */
@@ -73,6 +76,64 @@ a:hover {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.text-center { text-align: center; }
+.flex { display: flex; }
+.flex-center { align-items: center; justify-content: center; }
+.flex-col { flex-direction: column; }
+.gap-sm { gap: 10px; }
+.gap-md { gap: 20px; }
+.gap-lg { gap: 30px; }
+
+/* === COMPONENT BASE STYLES === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+}
+
+.btn-outline:hover {
+  background: var(--cyan);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--dark-gray);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+  border-color: var(--cyan);
 }
 
 /* === SECTION TITLE === */
@@ -153,14 +214,14 @@ a:hover {
 .mobile-nav-item {
   padding: 8px 12px;
   color: var(--gray);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   transition: var(--transition);
 }
 
 .mobile-nav-item:hover,
 .mobile-nav-item.active {
   color: var(--cyan);
-  background: rgba(100, 255, 218, 0.1);
+  background: var(--hover-bg);
 }
 
 .mobile-nav-item i {
@@ -172,7 +233,7 @@ a:hover {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: rgba(100, 255, 218, 0.1);
+  background: var(--hover-bg);
   border: 1px solid var(--cyan);
   border-radius: 20px;
   color: var(--cyan);
@@ -192,7 +253,7 @@ a:hover {
    ============================================ */
 .sidebar {
   width: 280px;
-  background: var(--dark);
+  background: var(--dark-gray);
   min-height: 100vh;
   position: fixed;
   left: 0;
@@ -241,7 +302,7 @@ a:hover {
   gap: 8px;
   padding: 10px 20px;
   border: 1px solid var(--cyan);
-  border-radius: 5px;
+  border-radius: var(--border-radius-sm);
   color: var(--cyan);
   transition: var(--transition);
 }
@@ -265,7 +326,7 @@ a:hover {
   align-items: center;
   padding: 12px 15px;
   color: var(--light-gray);
-  border-radius: 5px;
+  border-radius: var(--border-radius-sm);
   border-left: 3px solid transparent;
   transition: var(--transition);
 }
@@ -350,7 +411,7 @@ section {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(100, 255, 218, 0.1);
+  background: var(--hover-bg);
   border: 1px solid var(--cyan);
   display: flex;
   align-items: center;
@@ -372,7 +433,7 @@ section {
   gap: 10px;
   padding: 15px 35px;
   border: 2px solid var(--cyan);
-  border-radius: 50px;
+  border-radius: var(--border-radius-lg);
   color: var(--cyan);
   font-weight: 600;
   font-size: 1.1rem;
@@ -545,6 +606,12 @@ section {
    ============================================ */
 .projects-section {
   padding: 100px 0;
+  position: relative;
+}
+
+.projects-carousel-wrapper {
+  position: relative;
+  width: 100%;
 }
 
 .projects-carousel {
@@ -552,7 +619,7 @@ section {
   gap: 30px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 20px 0 60px;
+  padding: 20px 80px;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--cyan) var(--dark);
@@ -576,7 +643,7 @@ section {
   width: 400px;
   scroll-snap-align: start;
   background: var(--dark-gray);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   transition: var(--transition);
   border: 1px solid rgba(100, 255, 218, 0.1);
@@ -624,7 +691,7 @@ section {
 .demo-btn,
 .code-btn {
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-sm);
   font-weight: 600;
   transition: var(--transition);
 }
@@ -671,22 +738,17 @@ section {
   padding: 6px 12px;
   background: rgba(100, 255, 218, 0.1);
   color: var(--cyan);
-  border-radius: 5px;
+  border-radius: var(--border-radius-sm);
   font-size: 0.8rem;
   font-weight: 600;
 }
 
 /* Carousel Controls */
-.carousel-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-
 .carousel-btn {
-  background: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-330%);
+  background: rgba(10, 25, 47, 0.3);
   border: 2px solid var(--cyan);
   color: var(--cyan);
   width: 45px;
@@ -698,6 +760,8 @@ section {
   cursor: pointer;
   transition: var(--transition);
   font-size: 1.2rem;
+  z-index: 10;
+  backdrop-filter: blur(2px);
 }
 
 .carousel-btn:hover {
@@ -705,9 +769,20 @@ section {
   color: var(--dark);
 }
 
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
 .carousel-dots {
   display: flex;
+  justify-content: center;
   gap: 10px;
+  margin-top: 30px;
+  padding: 0 20px;
 }
 
 .dot {
@@ -993,6 +1068,39 @@ footer p {
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+  .mobile-navbar {
+    display: block;
+  }
+
+  .mobile-navbar-content {
+    padding: 10px 15px;
+  }
+
+  .mobile-navbar-nav {
+    flex: 1;
+    justify-content: center;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .mobile-nav-item {
+    padding: 8px 10px;
+    min-width: 44px;
+  }
+
+  .mobile-nav-item i {
+    font-size: 1rem;
+  }
+
+  .mobile-navbar-resume {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .mobile-navbar-resume span {
+    display: inline;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -1029,6 +1137,29 @@ footer p {
 
 /* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
+  .mobile-navbar-content {
+    padding: 8px 10px;
+  }
+
+  .mobile-navbar-nav {
+    gap: 4px;
+    padding: 0 5px;
+  }
+
+  .mobile-nav-item {
+    padding: 6px 8px;
+    min-width: 38px;
+  }
+
+  .mobile-nav-item i {
+    font-size: 0.9rem;
+  }
+
+  .mobile-navbar-resume {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
   .headpic img {
     width: 250px;
     height: 250px;
