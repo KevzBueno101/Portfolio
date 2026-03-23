@@ -902,36 +902,6 @@ footer p {
   margin: 5px 0;
 }
 
-/* ============================================
-   BACK TO TOP BUTTON
-   ============================================ */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--cyan);
-  color: var(--dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition);
-  z-index: 999;
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.back-to-top:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(100, 255, 218, 0.4);
-}
 
 /* ============================================
    MODALS
