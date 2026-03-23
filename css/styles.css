@@ -1064,6 +1064,18 @@ footer p {
   .project-card {
     width: 350px;
   }
+
+  .projects-carousel {
+    padding: 20px 100px;
+  }
+
+  .carousel-btn.prev {
+    left: 15px;
+  }
+
+  .carousel-btn.next {
+    right: 15px;
+  }
 }
 
 /* Mobile (max-width: 768px) */
@@ -1119,7 +1131,23 @@ footer p {
   }
 
   .project-card {
-    width: 100%;
+    width: 320px;
+  }
+
+  .projects-carousel {
+    padding: 20px 90px;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .project-image {
+    height: 200px;
   }
 
   .cert-card {
@@ -1160,6 +1188,40 @@ footer p {
     font-size: 0.75rem;
   }
 
+  .project-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .projects-carousel {
+    padding: 20px 60px;
+  }
+
+  .carousel-btn.prev {
+    left: 5px;
+  }
+
+  .carousel-btn.next {
+    right: 5px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-info {
+    padding: 20px;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
   .headpic img {
     width: 250px;
     height: 250px;
@@ -1191,5 +1253,54 @@ footer p {
     padding: 6px 8px;
     width: 15px;
     height: 15px;
+  }
+}
+
+/* Extra Small Mobile (max-width: 400px) */
+@media (max-width: 400px) {
+  .projects-carousel {
+    padding: 15px 25px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .project-info {
+    padding: 15px;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .project-tags {
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .project-tags span {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .carousel-btn.prev {
+    left: 3px;
+  }
+
+  .carousel-btn.next {
+    right: 3px;
   }
 }
